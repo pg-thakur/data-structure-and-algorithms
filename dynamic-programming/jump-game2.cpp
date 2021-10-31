@@ -12,18 +12,18 @@ int main()
 {
     int n;
     cin>>n;
-    vector<int> array(n);
+    vector<int>arr(n);
     for(int i=0;i<n;i++)
     {
-        cin>>array[i];
+        cin>>arr[i];
     }
     vector<int>dp(n);
     dp[n-1]=0;
     for(int i=n-2;i>=0;i--)
     {
-        int x= array[i];
+        int x= arr[i];
         int y=INT_MAX-1;
-        for(int j=1;j<=x && i+j<n;j++)
+        for(int j=1;j<=x && i+j<arr.size();j++)
         {
             y=min(y, dp[i+j]);
         }
